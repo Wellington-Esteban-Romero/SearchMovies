@@ -8,7 +8,7 @@ class RetrofitProvider {
 
     companion object {
 
-        private val BASE_URL = "https://www.omdbapi.com/?"
+        private val BASE_URL = "https://www.omdbapi.com/"
 
         fun getRetrofit(): MovieService {
             return Retrofit.Builder()
