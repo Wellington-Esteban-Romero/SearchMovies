@@ -92,7 +92,9 @@ class MainActivity : AppCompatActivity() {
                 if (responseBody != null) {
                     Log.i("Movies", responseBody.toString())
                     runOnUiThread {
-                        adapterMovie.updateMovie(responseBody.movies)
+                        if (responseBody.movies != null && responseBody.movies.isNotEmpty()) {
+                            adapterMovie.updateMovie(responseBody.movies)
+                        }
                     }
                 }
             }
