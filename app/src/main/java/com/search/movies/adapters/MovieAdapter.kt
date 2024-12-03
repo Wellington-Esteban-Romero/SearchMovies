@@ -35,7 +35,8 @@ class MovieViewHolder(view:View) : RecyclerView.ViewHolder(view) {
     private val itemMovieBinding = ItemMovieBinding.bind(view)
 
     fun bind(movieResponse: MovieResponse, onClickListener: (MovieResponse) -> Unit) {
-        itemMovieBinding.name.text = movieResponse.title
+        itemMovieBinding.title.text = movieResponse.title
+        itemMovieBinding.year.text = movieResponse.year
         Picasso.get().load(movieResponse.poster).into(itemMovieBinding.imgMovie);
         itemView.setOnClickListener {
             onClickListener(movieResponse)

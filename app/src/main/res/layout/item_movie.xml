@@ -20,17 +20,35 @@
             >
         </ImageView>
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Movie"
+            android:orientation="horizontal"
             android:layout_gravity="bottom">
-        </TextView>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Movie">
+            </TextView>
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Movie"
+                android:layout_gravity="end"
+                >
+            </TextView>
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

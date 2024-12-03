@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.search.movies.activities.DetailsMovieActivity
 import com.search.movies.adapters.MovieAdapter
+import com.search.movies.data.MovieResponse
 import com.search.movies.databinding.ActivityMainBinding
 import com.search.movies.services.MovieService
 import com.search.movies.utils.RetrofitProvider
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapterMovie: MovieAdapter
 
     companion object {
-        val apikey = "bb9571fd"
+        val APIKEY = "bb9571fd"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     private fun init () {
 
         adapterMovie = MovieAdapter() { movieItem ->
-            //onItemSelect(movieItem)
+            onItemSelect(movieItem)
         }
         binding.rvSearchMovies.apply {
             layoutManager = GridLayoutManager(this@MainActivity, 2)
@@ -59,9 +60,9 @@ class MainActivity : AppCompatActivity() {
         getActionBarSuperHero()
     }
 
-    private fun onItemSelect(detailsMovie: DetailsMovieActivity) {
+    private fun onItemSelect(movieResponse: MovieResponse) {
         val intent = Intent(this, DetailsMovieActivity::class.java)
-        //intent.putExtra(EXTRA_SUPERHERO_ID, DetailsMovieActivity.id)
+        intent.putExtra(DetailsMovieActivity.EXTRA_MOVIE_ID, movieResponse.imdbID)
         startActivity(intent)
     }
 
@@ -84,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun searchByName (name: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val response = movieService.findMoviesByName(name, apikey)
+            val response = movieService.findMoviesByName(name, APIKEY)
 
             if (response.isSuccessful) {
                 val responseBody = response.body()
