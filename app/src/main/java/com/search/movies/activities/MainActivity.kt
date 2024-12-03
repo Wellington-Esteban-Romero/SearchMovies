@@ -1,4 +1,4 @@
-package com.search.movies
+package com.search.movies.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import com.search.movies.activities.DetailsMovieActivity
+import com.search.movies.R
 import com.search.movies.adapters.MovieAdapter
 import com.search.movies.data.MovieResponse
 import com.search.movies.databinding.ActivityMainBinding

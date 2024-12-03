@@ -6,7 +6,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.search.movies.MainActivity
 import com.search.movies.R
 import com.search.movies.data.MovieResponse
 import com.search.movies.databinding.ActivityDetailsMovieBinding
@@ -47,7 +46,8 @@ class DetailsMovieActivity : AppCompatActivity() {
 
         val id = intent.getStringExtra(EXTRA_MOVIE_ID).orEmpty()
         getDataMovie(id)
-        println(id)
+
+        getActionBarSuperHero()
     }
 
     private fun getDataMovie (id: String) {
@@ -76,5 +76,11 @@ class DetailsMovieActivity : AppCompatActivity() {
         binding.detailDirector.text = movieResponse.director
         binding.detailGenre.text = movieResponse.genre
         binding.detailCountry.text = movieResponse.country
+    }
+
+    private fun getActionBarSuperHero ():Unit {
+        val actionBar = supportActionBar
+        actionBar!!.title = "Movies"
+        actionBar!!.setDisplayShowHomeEnabled(true)
     }
 }
