@@ -47,7 +47,7 @@ class DetailsMovieActivity : AppCompatActivity() {
         val id = intent.getStringExtra(EXTRA_MOVIE_ID).orEmpty()
         getDataMovie(id)
 
-        getActionBarSuperHero()
+        getActionBarMovie()
     }
 
     private fun getDataMovie (id: String) {
@@ -69,16 +69,16 @@ class DetailsMovieActivity : AppCompatActivity() {
 
     private fun createDetails (movieResponse: MovieResponse) {
         Picasso.get().load(movieResponse.poster).into(binding.imgMovieDetail)
-        binding.detailTitle.text = movieResponse.title
-        binding.detailYear.text = movieResponse.year
-        binding.detailPlot.text = movieResponse.plot
-        binding.detailRunTime.text = movieResponse.runtime
-        binding.detailDirector.text = movieResponse.director
-        binding.detailGenre.text = movieResponse.genre
-        binding.detailCountry.text = movieResponse.country
+        binding.detailTitle.text = "Titulo: ${movieResponse.title}"
+        binding.detailYear.text = "Año: ${movieResponse.year}"
+        binding.detailPlot.text = "Sinopsis: ${movieResponse.plot}"
+        binding.detailRunTime.text ="Duración ${movieResponse.runtime}"
+        binding.detailDirector.text = "Director: ${movieResponse.director}"
+        binding.detailGenre.text = "Género: ${movieResponse.genre}"
+        binding.detailCountry.text = "País: ${movieResponse.country}"
     }
 
-    private fun getActionBarSuperHero ():Unit {
+    private fun getActionBarMovie ():Unit {
         val actionBar = supportActionBar
         actionBar!!.title = "Movies"
         actionBar!!.setDisplayShowHomeEnabled(true)

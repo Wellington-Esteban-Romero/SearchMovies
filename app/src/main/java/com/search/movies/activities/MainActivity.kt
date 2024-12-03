@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             hasFixedSize()
         }
         movieService =   RetrofitProvider.getRetrofit()
-        getActionBarSuperHero()
+        getActionBarMovie()
     }
 
     private fun onItemSelect(movieResponse: MovieResponse) {
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getActionBarSuperHero ():Unit {
+    private fun getActionBarMovie ():Unit {
         val actionBar = supportActionBar
         actionBar!!.title = "Movies"
         actionBar!!.setDisplayShowHomeEnabled(true)

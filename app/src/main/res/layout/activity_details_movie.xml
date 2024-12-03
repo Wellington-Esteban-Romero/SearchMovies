@@ -53,17 +53,6 @@
         </TextView>
 
         <TextView
-            android:id="@+id/detailPoster"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Year">
-        </TextView>
-
-        <TextView
             android:id="@+id/detailPlot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -16,5 +16,4 @@ data class MovieResponse  (
     @SerializedName("Genre") val genre: String,
     @SerializedName("Country") val country: String,
     @SerializedName("imdbID") val imdbID: String
-    //@SerializedName("results") val superheros: List<SuperheroItem>
 ){}
